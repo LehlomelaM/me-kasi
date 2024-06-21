@@ -1,4 +1,4 @@
-# The-Local-Buzz/ buyway
+# me-kasi
 
 
 Website that will empower users to discover hidden treasures and unique shops in their neighborhoods.
