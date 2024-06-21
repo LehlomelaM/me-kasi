@@ -63,8 +63,6 @@
 ##############################################################################
 
 
-#
-set JAVA_HOME=/media/lehlomela/Dev-Work/java/jdk/jdk-17-oracle-x64
 
 # Attempt to set APP_HOME
 
