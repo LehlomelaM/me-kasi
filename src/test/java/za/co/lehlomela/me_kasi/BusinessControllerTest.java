@@ -27,13 +27,21 @@ public class BusinessControllerTest {
 
 
         DocumentContext documentContext = JsonPath.parse(response.getBody());
-        String id = documentContext.read("$['id']");
+        Long id = documentContext.read("$['id']", Long.class);
         String email = documentContext.read("$['email']");
         String category = documentContext.read("$['category']");
 
         assertThat(id).isNotNull();
         assertThat(email).isNotNull();
         assertThat(category).isNotNull();
+    }
+
+    @Test
+    void shouldReturnNotFoundWhenBusinessIsNotFound() {
+        ResponseEntity<String> response = restTemplate.getForEntity("/business/0", String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(response.getBody()).isNull();
     }
 
 }
