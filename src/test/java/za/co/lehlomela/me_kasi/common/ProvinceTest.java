@@ -47,28 +47,28 @@ class ProvinceTest {
         Province province = Province.valueOf("GP");
         assertEquals(Province.GP, province);
 
-        province = Province.valueOf("KZN1");
+        province = Province.valueOf("KZN");
         assertEquals(Province.KZN, province);
 
-        province = Province.valueOf("LP1");
+        province = Province.valueOf("LP");
         assertEquals(Province.LP, province);
 
-        province = Province.valueOf("MP1");
+        province = Province.valueOf("MP");
         assertEquals(Province.MP, province);
 
-        province = Province.valueOf("EC1");
+        province = Province.valueOf("EC");
         assertEquals(Province.EC, province);
 
-        province = Province.valueOf("NW1");
+        province = Province.valueOf("NW");
         assertEquals(Province.NW, province);
 
-        province = Province.valueOf("FS1");
+        province = Province.valueOf("FS");
         assertEquals(Province.FS, province);
 
-        province = Province.valueOf("NC1");
+        province = Province.valueOf("NC");
         assertEquals(Province.NC, province);
 
-        province = Province.valueOf("WC1");
+        province = Province.valueOf("WC");
         assertEquals(Province.WC, province);
     }
 }
