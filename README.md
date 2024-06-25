@@ -21,6 +21,14 @@ Here's a breakdown of the business logic and **potential** Java classes for the 
 - `averageRating` (double) - calculated based on reviews
 - `reviews` (List<Review>) - references Review class
 
+| Operation	 | API Endpoint	          | HTTP Method	 | Response Status  |
+|------------|------------------------|--------------|------------------|
+| Create     | 	/business	            | POST         | 	201 (CREATED)   |  
+| Read       | 	/businesses           | GET	         | 200 (OK)         |
+| Read       | 	/business/{id}	       | GET	         | 200 (OK)         |
+| Update     | 	/business/{id}	       | PUT	         | 204 (NO CONTENT) |
+| Delete     | 	/business/{id}	       | DELETE	      | 204 (NO CONTENT) |
+
 **Address**
 - `street` (String)
 - `city` (String)
