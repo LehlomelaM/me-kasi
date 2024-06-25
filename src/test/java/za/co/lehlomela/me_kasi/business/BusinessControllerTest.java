@@ -1,4 +1,4 @@
-package za.co.lehlomela.me_kasi;
+package za.co.lehlomela.me_kasi.business;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
