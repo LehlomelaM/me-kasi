@@ -1,5 +1,19 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.flywaydb:flyway-mysql:10.15.2"
+	}
+}
+
 plugins {
 	id 'java'
+	// Flyway
+	id("org.flywaydb.flyway") version "10.15.2"
+	/*
+	 * Spring
+	 */
 	id 'org.springframework.boot' version '3.3.1'
 	id 'io.spring.dependency-management' version '1.1.5'
 }
@@ -26,11 +40,33 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+	/*
+	 * SQL
+	 */
 	implementation 'org.flywaydb:flyway-core'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	/*
+	 * TEST
+	 */
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+/**
+ * Flyway
+ * The Flyway Gradle plugin supports Gradle 7.6.x* and Gradle 8.x running on Java 17.
+ * https://documentation.red-gate.com/flyway/flyway-cli-and-api/usage/gradle-task
+ */
+flyway {
+	locations = ['classpath:db/migrations/mysql/']
+	user = System.getenv('DATABASE_DEV_USER')
+	password = System.getenv('DATABASE_DEV_PASSWORD')
+	url = 'jdbc:mysql://localhost:3306/mekasi'
+//	configFiles = ['flyway.conf']
 }
 
 tasks.named('test') {
