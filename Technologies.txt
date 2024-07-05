@@ -1,0 +1,5 @@
+- Gradle
+- Java (17)
+- Spring Boot 3.3.1 (web, data)
+- Flyway 10.0.0
+- Lombok
