@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: me-kasi
+
+app:
+  datasource:
+    username: lehlomela
+    password: lehlomela
+    jdbcUrl: "jdbc:mysql://localhost:3306/mekasi"
+
+#/environments:
+#  dev:
+#    url: url
+#    name: name
+#    password: password
+
