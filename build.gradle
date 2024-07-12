@@ -42,7 +42,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 
 	/*
-	 * SQL
+	 *
 	 */
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	/*
@@ -63,7 +63,7 @@ dependencies {
  * https://documentation.red-gate.com/flyway/flyway-cli-and-api/usage/gradle-task
  */
 flyway {
-	locations = ['classpath:db/migrations/mysql/']
+	locations = ['classpath:db/migration/mysql/']
 	user = System.getenv('DATABASE_DEV_USER')
 	password = System.getenv('DATABASE_DEV_PASSWORD')
 	url = 'jdbc:mysql://localhost:3306/mekasi'
