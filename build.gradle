@@ -67,6 +67,7 @@ flyway {
 	user = System.getenv('DATABASE_DEV_USER')
 	password = System.getenv('DATABASE_DEV_PASSWORD')
 	url = 'jdbc:mysql://localhost:3306/mekasi'
+	cleanDisabled = false
 //	outOfOrder = true
 //	configFiles = ['flyway.conf']
 }
