@@ -13,7 +13,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 @SpringBootTest()
-@EnableJdbcRepositories
 public class BusinessRepositoryTest {
 
     @Autowired
