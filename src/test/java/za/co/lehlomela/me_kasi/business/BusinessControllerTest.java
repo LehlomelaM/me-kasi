@@ -28,12 +28,12 @@ public class BusinessControllerTest {
 
         DocumentContext documentContext = JsonPath.parse(response.getBody());
         Long id = documentContext.read("$['id']", Long.class);
+        String name = documentContext.read("$['name']");
         String email = documentContext.read("$['email']");
-        String category = documentContext.read("$['category']");
 
         assertThat(id).isNotNull();
+        assertThat(name).isNotNull();
         assertThat(email).isNotNull();
-        assertThat(category).isNotNull();
     }
 
     @Test
