@@ -14,9 +14,9 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJdbcRepositories( /*activate spring SDJ repositories*/
-        includeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BaseRepositoryJdbc.class})
+        includeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BaseRepositoryJdbc.class}),
+        basePackages = {"za.co.lehlomela.me_kasi"}
 //        queryLookupStrategy = QueryLookupStrategy.Key.USE_DECLARED_QUERY
-//        repositoryBaseClass = BaseRepositoryJdbc.class
 )
 public class DatasourceConfiguration
         extends AbstractJdbcConfiguration /*provides default beans required SDJ*/ {
@@ -27,3 +27,5 @@ public class DatasourceConfiguration
         return DataSourceBuilder.create().build();
     }
 }
+
+
