@@ -1,23 +1,34 @@
 package za.co.lehlomela.me_kasi.business;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.With;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-import java.util.List;
-import java.util.Locale;
-
+/*
+ * Lombok
+ */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor(force = true)
+/*
+ * Spring Data
+ */
+@Table("BUSINESS")
 public class Business {
-    // todo: replace Object with relevant type
-    private Long id;
+    @Id
+    @With
+    private final Long id;
     private String name;
-    private Object address;
-    private String phoneNumber;
     private String email;
     private String website;
-    private Category category;
     private String description;
-    private String imageUrl;
-    private List<String> photos;
-    private Double averageRating;
-    private List<Object> reviews;
+    private String profileImgUrl;
+    private String phoneNumber;
+//    List<String> photos;
+//  private   final Address address;
+//    private Category category;
+//    List<Review> reviews;
 }
