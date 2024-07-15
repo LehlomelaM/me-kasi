@@ -75,3 +75,12 @@ flyway {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+test {
+	testLogging {
+		showExceptions true
+		showCauses true
+		showStackTraces true
+	}
+}
