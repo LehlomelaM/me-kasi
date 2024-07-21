@@ -2,11 +2,10 @@ package za.co.lehlomela.me_kasi.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.Optional;
 
 @RestController()
@@ -29,6 +28,14 @@ public class BusinessController {
 
     }
 
+    @PostMapping
+    public ResponseEntity<Business> save(@RequestBody Business business, UriComponentsBuilder ucb) {
 
+        Business savedBusiness = businessRepository.save(business);
+        URI location = ucb.path("business/{id}")
+                .buildAndExpand(savedBusiness.getId())
+                .toUri();
 
+        return ResponseEntity.created(location).build();
+    }
 }
