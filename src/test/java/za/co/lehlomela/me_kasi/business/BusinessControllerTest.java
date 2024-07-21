@@ -51,6 +51,9 @@ public class BusinessControllerTest {
     @Disabled
     void shouldSaveBusinessWhenDataIsValid() {
         Business business = new Business();
+        business.setName("testBusiness");//todo:: use random data
+        business.setEmail("testBusiness@gmail.com");
+
         ResponseEntity<Void> response = restTemplate.postForEntity("/business", business, Void.class);
 
         URI location = response.getHeaders().getLocation();
