@@ -75,4 +75,24 @@ public class BusinessControllerTest {
         assertThat(email).isNotNull();
     }
 
+    @Test
+    void shouldReturnAPageOfBusinesses() {
+        int page = 0;
+        int size = 50;
+        String sort = "id";
+
+        ResponseEntity<String> response = restTemplate.getForEntity("/business?page=%d&size=%d&sort=%s,desc".formatted(page,size,sort), String.class);
+//        ResponseEntity<String> response = restTemplate.getForEntity("/business", String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+
+        DocumentContext dCtx = JsonPath.parse(response.getBody());
+        Integer length = dCtx.read("$.length()");
+        Integer id = dCtx.read("$[0].id");
+
+        assertThat(length).isLessThanOrEqualTo(size);
+        assertThat(id).isEqualTo(1);
+    }
+
 }
