@@ -6,4 +6,7 @@
 - Lombok
 
 -- Part of Spring Boot Starter
-- JsonPath
+- JsonPath (https://github.com/json-path/JsonPath)
+
+- AssertJ (https://assertj.github.io/doc/)
+- JUnit
